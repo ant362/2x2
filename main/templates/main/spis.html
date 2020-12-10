@@ -1,0 +1,78 @@
+{% extends 'main/base.html' %}
+
+{% block title %}
+{{ title }}
+{% endblock %}
+
+{% block content %}
+
+    <h1 align=center>Дважды Два - Центр Ментальной Арифметики в Минске</h1>
+
+    {% if tasks %}
+     <table  class="alert-warning mt-3" >
+
+
+           <style type="text/css">
+   TABLE {
+    width: 1100px; /* Ширина таблицы */
+    border-collapse: collapse; /* Убираем двойные линии между ячейками */
+   }
+   TD, TH {
+    padding: 3px; /* Поля вокруг содержимого таблицы */
+    border: 1px solid black; /* Параметры рамки */
+   }
+   TH {
+    background: #b0e0e6; /* Цвет фона */
+   }
+
+  </style>
+            <tr>
+                <th >N</th>
+                <th>Имя</th>
+                <th>Фамилия</th>
+                <th>ФИО Родителя</th>
+                <th>возрост</th>
+                <th>город</th>
+                <th>страна</th>
+                <th>телефон</th>
+                <th>Skype</th>
+                <th>viber</th>
+                <th>ступень</th>
+                <th>группа</th>
+                <th>уровень</th>
+                <th>занятия</th>
+                <th>.......<+->.......</th>
+
+            </tr>
+            {% for el in tasks %}
+
+            <tr>
+                <td >{{ el.id }}</td>
+                <td>{{ el.name }}</td>
+                <td>{{ el.fname }}</td>
+                <td>{{ el.fname_R }}</td>
+                <td>{{ el.vozr }}</td>
+                <td>{{ el.gorod }}</td>
+                <td>{{ el.strana }}</td>
+                <td>{{ el.telefon }}</td>
+                <td>{{ el.Skypeid }}</td>
+                <td>{{ el.viber }}</td>
+                <td>{{ el.stupen }}</td>
+                <td>{{ el.grupp }}</td>
+                <td>{{ el.uroven }}</td>
+                <td><a href="{% url 'zad' el.id %}" class="btn-info">Занятия</a></td>
+                <td><a href="{% url 'edit' el.id %}" class="btn-info">Редактировать</a>
+                    <a href="{% url 'delete' el.id %}" class="btn-dange">Удалить</a></td>
+
+            </tr>
+
+
+            {% endfor %}
+
+    </table>
+            <a class="p-2 text-dark" href="{% url 'creat' %}" >Создать</a>
+    {% else %}
+        <p>Нет записей!</p>
+    {% endif %}
+
+{% endblock %}

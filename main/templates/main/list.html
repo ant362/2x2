@@ -1,0 +1,65 @@
+{% extends 'main/base.html' %}
+
+{% block title %}
+Саздать задачуy
+{% endblock %}
+
+{% block content %}
+    <h1>Занятия</h1>
+    <br>
+    <h2>{{ task.name }}</h2>
+
+    <table  class="alert-warning mt-3" >
+
+   <style type="text/css">
+   TABLE {
+    width: 1100px; /* Ширина таблицы */
+    border-collapse: collapse; /* Убираем двойные линии между ячейками */
+   }
+   TD, TH {
+    padding: 3px; /* Поля вокруг содержимого таблицы */
+    border: 1px solid black; /* Параметры рамки */
+   }
+   TH {
+    background: #b0e0e6; /* Цвет фона */
+   }
+  </style>
+
+            {% csrf_token %}
+                        <tr>
+                <th >дата/время</th>
+                <th >Задание: {{ task.name }}</th>
+                <th >Занятие</th>
+                <th >Дл.мин.</th>
+                <th >Тема</th>
+                <th >Отметка</th>
+                <th >Пров.</th>
+                <th ></th>
+                <th ></th>
+                        </tr>
+
+
+                        {% for zdd in task.zadtb_set.all %}
+                            <tr>
+                            <td>   {{ zdd.dat_vre }}</td>
+                            <td>   {{ zdd.dz }}</td>
+                            <td>   {{ zdd.zan }}</td>
+                            <td>   {{ zdd.dlit_z }}</td>
+                            <td>   {{ zdd.tema }}</td>
+                            <td>   {{ zdd.otm }}</td>
+                            <td>   {{ zdd.pro }}</td>
+                            <td><a href="{% url 'ed_list' zdd.id %}" class="btn-info">Редактировать</a></td>
+                            <td><a href="del_list" class="btn-dange">Удалить</a></td>
+                            </tr><br>
+
+                        {% endfor %}
+ </table>
+                <a class="p-2 text-dark" href="{% url 'cr_list' task.id %}" >Создать</a>
+
+
+
+{% endblock %}
+
+
+
+

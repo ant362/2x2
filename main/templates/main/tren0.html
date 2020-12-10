@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edje">
+
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+</head>
+
+
+<div class="container">
+    <script type="text/javascript" src="{{ STATIC_URL }}static/jspdf.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}static/style9.css"/>
+
+
+    <div id="pech" align=right> <a  href="" onclick="this.style.display='none'; print()">Печать</a> </div>
+   <!-- <div id="pech" align=right> <a id="p_pdf" href="#" >Печать PDF</a> </div>-->
+
+    <nav class="menu">
+
+        <ul>
+            <li><a id="rez_m" href="#">Режим 0</a></li>
+            <li><a id="rez_m" href="#">
+                <span>Разряд : </span>
+                <span id="raz_minus"> < </span>
+                <span id="raz_show"> 4 </span>
+                <span id="raz_plus"> > </span>
+
+            </a></li>
+        <!--    <li><a id="tim_m" href="#"> --!>
+                <li><a id="rez_m" href="#">
+                <span>Время:</span>
+                <span id="sek_minus"><</span>
+                <span id="seku_show">7.0</span>
+                <span>cек</span>
+                <span id="sek_plus">></span>
+            </a></li>
+        </ul>
+    </nav>
+
+
+
+
+<div id="blokid" class="blokabak" align=center >
+<div id="blokid_s" class="content" >
+<img class="sho" align=centr src="/media/abb0.png"  id="tis"  alt="jQuery">
+<img class="sho" align=centr src="/media/abb0.png"  id="sot"  alt="jQuery">
+<img class="sho" align=centr src="/media/abb0.png"  id="des"  alt="jQuery">
+<img class="sho" align=centr src="/media/abb0.png"  id="edi"  alt="jQuery">
+
+
+</div>
+</div>
+
+  <div id="futt"  class="footer">
+
+
+            <div id="inpbar">
+
+                  <div id="cifs">
+                  <b>ЧИСЛО:</b><input type="string" min="0" max="9999" size="4" id="cif"/>
+                  </div>
+
+            </div>
+
+
+
+<div id="nov"></div>
+  </div>
+
+</div>
+
+<script type="text/javascript" src="{{ STATIC_URL }}static/jquery.js"></script>
+<script type="text/javascript" src="{{ STATIC_URL }}static/script9.js"></script>
+<!--<script type="text/javascript" src="https://html2canvas.hertzen.com/dist/html2canvas.js"></script>
+<script type="text/javascript" src="{{ STATIC_URL }}static/canvas2image.js"></script>-->
+
+
+

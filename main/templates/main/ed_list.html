@@ -1,0 +1,36 @@
+{% extends 'main/base.html' %}
+
+{% block title %}
+Саздать задачуy
+{% endblock %}
+
+{% block content %}
+   <h1>Изменить  !</h1>
+
+        {{ task.name }}
+
+        <form method="post">
+
+        {% csrf_token %}
+
+
+
+        {{ form.id }}
+        {{ form.dat_vre }}
+        {{ form.dz }}
+        {{ form.zan }}
+        {{ form.dlit_z }}
+        {{ form.tema }}
+        {{ form.otm }}
+        {{ form.pro }}
+
+
+        <span>{{ error }}</span>
+
+
+
+        <button type="submit" class="btn btn-success">Добавить</button>
+
+    </form>
+
+{% endblock %}
