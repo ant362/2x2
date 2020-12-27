@@ -8,20 +8,21 @@
    <h1>Добавить  !</h1>
 
         <form method="post">
-
+        <table  class="alert-warning mt-1" >
         {% csrf_token %}
-        {{ form.name }}
-        {{ form.fname }}
-        {{ form.fname_R }}
-        {{ form.vozr }}
-        {{ form.gorod }}
-        {{ form.strana }}
-        {{ form.telefon }}
-        {{ form.Skyyyd }}
-        {{ form.viber }}
-        {{ form.stupen }}
-        {{ form.grupp }}
-        {{ form.uroven }}
+        <tr><td >Имя </td><td >{{ form.name }} </td></tr>
+        <tr><td >Фамиля </td><td >{{ form.fname }}</td></tr>
+        <tr><td >Имя Р </td><td >{{ form.fname_R }}</td></tr>
+        <tr><td >Возрост </td><td >{{ form.vozr }}</td></tr>
+        <tr><td >Город </td><td >{{ form.gorod }}</td></tr>
+        <tr><td >Страна </td><td >{{ form.strana }}</td></tr>
+        <tr><td >Телефон </td><td >{{ form.telefon }}</td></tr>
+        <tr><td >Skype </td><td >{{ form.Skyyyd }}</td></tr>
+        <tr><td >Viber </td><td >{{ form.viber }}</td></tr>
+        <tr><td >Ступень </td><td >{{ form.stupen }}</td></tr>
+        <tr><td >Группа </td><td >{{ form.grupp }}</td></tr>
+        <tr><td >Уровень </td><td >{{ form.uroven }}</td></tr>
+            </table>
         <span>{{ error }}</span>
 
 

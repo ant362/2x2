@@ -13,16 +13,13 @@
 
         {% csrf_token %}
 
-
-
-        {{ form.id }}
-        {{ form.dat_vre }}
-        {{ form.dz }}
-        {{ form.zan }}
-        {{ form.dlit_z }}
-        {{ form.tema }}
-        {{ form.otm }}
-        {{ form.pro }}
+        Время      {{ form.dat_vre }}
+        Дом задание{{ form.dz }}
+        Занятие    {{ form.zan }}
+        Длительность{{ form.dlit_z }}
+        Тема        {{ form.tema }}
+        Отметка     {{ form.otm }}
+        Проведение  {{ form.pro }}
 
 
         <span>{{ error }}</span>
@@ -30,7 +27,7 @@
 
 
         <button type="submit" class="btn btn-success">Добавить</button>
+</form>
 
-    </form>
 
 {% endblock %}

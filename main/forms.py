@@ -1,24 +1,33 @@
-from django.utils import timezone
+import datetime
+import sys
+from django.conf.urls import  url
+from django.shortcuts import render
 from .models import Task, Zadtb
-from django.forms import ModelForm, TextInput, DateInput
+from django.forms import ModelForm, TextInput, DateTimeInput
 
-class FormZan(ModelForm):
+
+
+
+
+class FormZan_Cr(ModelForm):
     class Meta:
         model = Zadtb
-        dat_v=timezone.now()
 
-        fields = ["id", "dz", "zan", "tema", "dlit_z", "otm", "pro"]
+        fields = [ "dat_vre", "dz", "zan", "tema", "dlit_z", "otm", "pro" ]
 
         widgets = {
             "id": "id",
-            "dat_vre": DateInput(attrs={
+            'gpp':'gpp',
+            "dat_vre": DateTimeInput(attrs={
                 'class': 'form-control',
-                'placeholder': 'дата'
+                'type': 'datetime-local',
+
+
 
             }),
             "dz": TextInput(attrs={
                 'class': 'form-control',
-                'placeholder': 'задание N'
+                'placeholder': "Задание"
 
             }),
             "zan": TextInput(attrs={
@@ -49,6 +58,58 @@ class FormZan(ModelForm):
 
         }
 
+class FormZan_Ed(ModelForm):
+    class Meta:
+        model = Zadtb
+
+
+        fields = [ "dat_vre", "dz", "zan", "tema", "dlit_z", "otm", "pro" ]
+
+        widgets = {
+            "id": "id",
+            'gpp':'gpp',
+            "dat_vre": DateTimeInput(attrs={
+                'class': 'form-control',
+                'type': "",
+            }),
+            "dz": TextInput(attrs={
+                'class': 'form-control',
+                'placeholder': "Задание"
+
+            }),
+            "zan": TextInput(attrs={
+                'class': 'form-control',
+                'placeholder': 'Урок N'
+
+            }),
+            "tema": TextInput(attrs={
+                'class': 'form-control',
+                'placeholder': 'Тема'
+
+            }),
+            "dlit_z": TextInput(attrs={
+                'class': 'form-control',
+                'placeholder': 'Длительность'
+
+            }),
+            "otm": TextInput(attrs={
+                'class': 'form-control',
+                'placeholder': 'Отметка'
+
+            }),
+            "pro": TextInput(attrs={
+                'class': 'form-control',
+                'placeholder': 'Проведение'
+
+            }),
+
+        }
+
+
+
+
+
+
 class TaskForm(ModelForm):
     class Meta:
         # pass
@@ -58,7 +119,7 @@ class TaskForm(ModelForm):
 
 
         fields = [
-             "name", "fname", "fname_R", "vozr",
+             "dtz", "name", "fname", "fname_R", "vozr",
             "gorod", "strana", "telefon", "Skyyyd",
             "viber", "stupen", "grupp", "uroven"
         ]
@@ -66,52 +127,47 @@ class TaskForm(ModelForm):
         widgets = {
 
             "name": TextInput(attrs={
-                'class': 'form-control',
-                'placeholder': 'Имя'
+                'width': '60px',
+
 
             }),
-            "fname": TextInput(attrs={
+            "dtz": DateTimeInput(attrs={
                 'class': 'form-control',
-                'placeholder': 'Фамилия'
+                'type': "",
+            }),
+            "fname": TextInput(attrs={
+                'width': '60px',
             }),
             "fname_R": TextInput(attrs={
-                'class': 'form-control',
-                'placeholder': 'ФИО Родителей'
+                'width': '60px',
             }),
             "vozr":  TextInput(attrs={
-                'class': 'form-control',
-                'placeholder': 'возрост'
+                'width': '60px',
             }),
             "gorod": TextInput(attrs={
-                'class': 'form-control',
-                'placeholder': 'город'
+                'width': '60px',
             }),
             "strana": TextInput(attrs={
-                'class': 'form-control',
-                'placeholder': 'страна'
+                'width': '60px',
             }),
             "telefon":  TextInput(attrs={
-                'class': 'form-control',
-                'placeholder': 'телефон'
+                'width': '60px',
             }),
             "Skyyyd": TextInput(attrs={
-                'class': 'form-control',
-                'placeholder': 'Skype'
+                'width': '60px',
             }),
             "viber": TextInput(attrs={
-                'class': 'form-control',
-                'placeholder': 'viber'
+                'width': '60px',
             }),
             "stupen": TextInput(attrs={
-                'class': 'form-control',
-                'placeholder': 'ступень'
+                'width': '60px',
             }),
             "grupp": TextInput(attrs={
-                'class': 'form-control',
-                'placeholder': 'группа'
+                'width': '60px',
             }),
             "uroven": TextInput(attrs={
-                'class': 'form-control',
-                'placeholder': 'уровень'
+                'width': '60px',
             })
         }
+
+

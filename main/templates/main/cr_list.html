@@ -13,23 +13,20 @@
 
         {% csrf_token %}
 
-        {{ form.id }}{{ field.errors }}
-<!--
-        {{ form.dat_vre }}{{ field.errors }}
--->
-        {{ form.dz }}{{ field.errors }}
-        {{ form.zan }}{{ field.errors }}
-        {{ form.dlit_z }}{{ field.errors }}
-        {{ form.tema }}{{ field.errors }}
-        {{ form.otm }}{{ field.errors }}
-        {{ form.pro }}{{ field.errors }}
+        {{ form.dat_vre }}
+        {{ form.dz }}
+        {{ form.zan }}
+        {{ form.dlit_z }}
+        {{ form.tema }}
+        {{ form.otm }}
+        {{ form.pro }}
 
 
         <span>{{ error }}</span>
-<span>{{ form.non_field_errors }}</span>
-
 
         <button type="submit" class="btn btn-success">Добавить</button>
+
+
 
     </form>
 

@@ -30,6 +30,7 @@ class Task(models.Model):
     stupen  = models.CharField('ступень',max_length=30)
     grupp   = models.CharField('группа',max_length=30)
     uroven  = models.CharField('уровень',max_length=30)
+    dtz = models.DateTimeField('ДатаВремяЗанятия', max_length=4)
     def __str__(self):
         return self.name
 

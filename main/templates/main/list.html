@@ -9,7 +9,6 @@
     <br>
     <h2>{{ task.name }}</h2>
 
-    <table  class="alert-warning mt-3" >
 
    <style type="text/css">
    TABLE {
@@ -24,9 +23,9 @@
     background: #b0e0e6; /* Цвет фона */
    }
   </style>
-
-            {% csrf_token %}
-                        <tr>
+          <table  class="alert-warning mt-3" >
+              {% csrf_token %}
+                <tr>
                 <th >дата/время</th>
                 <th >Задание: {{ task.name }}</th>
                 <th >Занятие</th>
@@ -36,7 +35,7 @@
                 <th >Пров.</th>
                 <th ></th>
                 <th ></th>
-                        </tr>
+                </tr>
 
 
                         {% for zdd in task.zadtb_set.all %}
@@ -48,13 +47,13 @@
                             <td>   {{ zdd.tema }}</td>
                             <td>   {{ zdd.otm }}</td>
                             <td>   {{ zdd.pro }}</td>
-                            <td><a href="{% url 'ed_list' zdd.id %}" class="btn-info">Редактировать</a></td>
-                            <td><a href="del_list" class="btn-dange">Удалить</a></td>
-                            </tr><br>
+                            <td><a href="{% url 'ed_list' zdd.id %}?next={{ request.path }}" class="btn-info">Редактировать</a></td>
+                            <td><a href="{% url 'del_list' zdd.id %}?next={{ request.path }}" class="btn-dange">Удалить</a></td>
+                            </tr>
 
                         {% endfor %}
  </table>
-                <a class="p-2 text-dark" href="{% url 'cr_list' task.id %}" >Создать</a>
+                <a class="p-2 text-dark" href="{% url 'cr_list' task.id %}?next={{ request.path }}" >Создать</a>
 
 
 

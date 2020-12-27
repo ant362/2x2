@@ -5,10 +5,25 @@
 {% endblock %}
 
 {% block content %}
-    <div class="alert-warning mt-2">
-        <h1>Расписание</h1><br>
-            <div class="text">
-                <textarea placeholder="Расписание" class="form-control"></textarea>
-            </div>
-    </div>
+
+<div style="color: blueviolet;">
+  <style type="text/css">
+   TABLE {
+    width: 1100px; /* Ширина таблицы */
+    border-collapse: collapse; /* Убираем двойные линии между ячейками */
+   }
+   TD, TH {
+    padding: 3px; /* Поля вокруг содержимого таблицы */
+    border: 1px solid black; /* Параметры рамки */
+   }
+   TH {
+    background: #b0e0e6; /* Цвет фона */
+   }
+
+  </style>
+{{ html_out }}
+<!--{{ html_out|safe }}-->
+
+</div>
 {% endblock %}
+
